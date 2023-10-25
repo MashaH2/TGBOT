@@ -1,25 +1,25 @@
-
-from Auth_User import authorize
-from Commands import commands
-from Greet_User import greet_user
-from Group_Owner import group_owner
-from Setup import setup
-from User import user
-from Wallet_address import wallet_address
-from Invite_User import invite_user
-from User_Access import user_access
-from Update_Group import update_group
+import os
 from telegram import Update
 from telegram.ext import (
     Application,
     CommandHandler,
 )
 from dotenv import load_dotenv
-import os
+from auth_user import authorize
+from commands import commands
+from greet_user import greet_user
+from group_owner import group_owner
+from setup import setup
+from user import user
+from wallet_address import wallet_address
+from invite_user import invite_user
+from user_access import user_access
+from update_group import update_group
 
 load_dotenv("keys.env")
 
 token = os.environ.get("token")
+
 
 def main() -> None:
     """Start the Bot"""

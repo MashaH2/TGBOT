@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import ContextTypes
-from Check_User_Auth import is_user_authorized
+from check_user_auth import is_user_authorized
 
 async def commands(
         update: Update, context: ContextTypes.DEFAULT_TYPE
