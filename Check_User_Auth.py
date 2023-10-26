@@ -25,6 +25,6 @@ def is_user_authorized(
         return False
 
     # Read the current data from the file
-    with open(abs_path, 'r') as file:
+    with open(abs_path, 'r', encoding= 'utf=8') as file:
         current_data = json.load(file)
     return telegram_user_id in current_data
