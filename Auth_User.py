@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import ContextTypes
 import requests
 import pyshorteners
-from Config import logger
+from config import logger
 
 
 async def authorize(update: Update, context: ContextTypes.DEFAULT_TYPE)-> None:
@@ -16,7 +16,7 @@ async def authorize(update: Update, context: ContextTypes.DEFAULT_TYPE)-> None:
 
     try:
         # Make a request to the Flask app to get the verification URL
-        response = requests.get(verification_url_endpoint)
+        response = requests.get(verification_url_endpoint, timeout=30)
         verification_url = response.text
 
         # Shorten the verification URL
